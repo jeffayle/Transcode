@@ -1,0 +1,33 @@
+Modules here should provide:
+- HANDLES (list of strings)
+- decode(input file, output file)
+- getMetadata(input file)
+
+## HANDLES
+Is a list of lower case file extensions that this format provides a decoder for.
+for example `HANDLES=['flac','fla']`
+
+## decode(input file, output file)
+This function takes two arguments, the input file (file name), and the output
+file (file name). The function should decode the audio file. The output file
+is just a hint, and can freely decode to anywhere.
+
+The function returns the file name that it decoded to, which may (but isn't
+necessarily) the same as the second argument. 
+
+## getMetadata(input file)
+This function should return as much metadata as possible about the file it is
+given as a dictionary. None is required, but should provide as much as possible.
+
+If the format is supported by the program `exiftool`,
+`config.readExiftoolMetadata` can be used to get the metadata. Otherwise, this
+function should return with the same names that `exiftool` uses.
+
+Namely;
+- Title
+- Artist
+- Album
+- Genre
+- Track Number
+- Tracktotal
+- Date
