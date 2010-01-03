@@ -5,9 +5,11 @@ import sys
 #Commands
 import add
 import list
+import clear
 commands = config.mapDict(config.cmdName, [
     add,
-    list
+    list,
+    clear
 ])
 
 config.createState()

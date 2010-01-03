@@ -16,5 +16,5 @@ def do():
     else:
         confirmed = raw_input("Clear unprocessed files? [yn] ")=='y'
     ###
-    if confirmed:
-        os.unlink(os.path.join(config.STATE, "unprocessed"))
+    if os.path.exists(fn) and confirmed:
+        os.unlink(fn)
