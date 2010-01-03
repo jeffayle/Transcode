@@ -6,10 +6,12 @@ import sys
 import add
 import list
 import clear
+import filter
 commands = config.mapDict(config.cmdName, [
     add,
     list,
-    clear
+    clear,
+    filter
 ])
 
 config.createState()
