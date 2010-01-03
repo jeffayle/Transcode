@@ -5,10 +5,10 @@ import sys
 #Commands
 import add
 import list
-commands = [
+commands = config.mapDict(config.cmdName, [
     add,
     list
-]
+])
 
 config.createState()
 
@@ -20,9 +20,9 @@ else:
 
 #Do that command
 if command:
-    if command in map(config.cmdName, commands):
+    if command in commands:
         #do() that command
-        filter(lambda a: config.cmdName(a)==command,commands)[0].do()
+        commands[command].do()
     else:
         sys.stderr.write("Unknown command '%s'\n"%(command))
 else:
