@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 "Controls configuration"
 import os
+import subprocess
 
 STATE=os.path.expanduser("~/.transcode")
 
@@ -20,3 +21,12 @@ def mapDict(keyFunction, values):
     the key, value is the original value"
     return dict((keyFunction(v), v) for v in values)
 
+def readExiftoolMetadata(file):
+    "Uses exiftool to read metadata from a file, returns a dictionary"
+    p = subprocess.Popen(["exiftool",file], stdout=subprocess.PIPE)
+    p.wait() #Wait for it to finish
+    output = p.communicate()[0]
+    #Split on linebreaks, then on spaces, stripping extra whitespace
+    data = map(lambda ln: map(str.strip, ln.split(":",1)), output.split("\n"))
+    data.remove(['']) #Remove blank list
+    return dict(data)
