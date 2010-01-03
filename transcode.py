@@ -4,8 +4,10 @@ import sys
 
 #Commands
 import add
+import list
 commands = [
-    add
+    add,
+    list
 ]
 
 config.createState()
