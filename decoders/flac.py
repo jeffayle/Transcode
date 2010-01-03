@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """Handles decoding flac files"""
 import subprocess
+import config
 
 HANDLES=['flac','fla']
 
@@ -16,3 +17,5 @@ def decode(inF, outF):
         return outF
     else:
         return False
+
+getMetadata = config.readExiftoolMetadata
