@@ -14,6 +14,7 @@ def do():
 
 def addFile(buff, fname):
     "Adds a file to be processed"
+    fname = os.path.realpath(fname) #Expand path
     ##TODO: Add directories recursively
     ##TODO: Check if file exists before adding
     buff.write("%s\n"%(fname))
