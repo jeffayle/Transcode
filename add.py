@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-"Functions for processing the add command"
+"""Adds files to be processed.
+Usage: add [file1 [file2 [file3 [... filen]]]]"""
 CMD="add"
 
 def do():
