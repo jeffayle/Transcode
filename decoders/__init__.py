@@ -5,8 +5,9 @@ import os
 
 #Decoders
 import wave
+import flac
 handlers = { }
-for m in [wave]:
+for m in [wave,flac]:
     for type in m.HANDLES:
         handlers[type] = m
 
