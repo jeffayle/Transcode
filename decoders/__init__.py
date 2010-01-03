@@ -1,4 +1,10 @@
 #!/usr/bin/env python
 """Handles decoders"""
-import wave
 import config
+
+#Decoders
+import wave
+handlers = { }
+for m in [wave]:
+    for type in m.HANDLES:
+        handlers[type] = m
