@@ -10,6 +10,7 @@ def do():
     f = open(os.path.join(config.STATE,"unprocessed"), "a")
     for fn in sys.argv[2:]:
         addFile(f, fn)
+    f.close()
 
 def addFile(buff, fname):
     "Adds a file to be processed"
