@@ -17,4 +17,4 @@ def decode(inF, outF):
     if type in handlers:
         return handlers[type].decode(inF, outF)
     else:
-        return False
+        return None
