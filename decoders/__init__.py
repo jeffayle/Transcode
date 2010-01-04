@@ -19,3 +19,10 @@ def decode(inF, outF):
         return handlers[type].decode(inF, outF)
     else:
         return None
+
+def getMetadata(inF):
+    type = os.path.splitext(inF)[1][1:].lower()
+    if type in handlers:
+        return handlers[type].getMetadata(inF)
+    else:
+        return None
