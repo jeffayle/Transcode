@@ -2,12 +2,18 @@
 """Handles decoders"""
 import config
 import os
+from glob import glob
+import sys
+import imp
 
 #Decoders
-import wave
-import flac
+files = glob("decoders/*.py")
+files.remove("decoders/__init__.py")
+modules = map(lambda m: imp.load_source(
+        os.path.basename(os.path.splitext(m)[0]), m), files)
+
 handlers = { }
-for m in [wave,flac]:
+for m in modules:
     for type in m.HANDLES:
         handlers[type] = m
 
