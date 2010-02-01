@@ -10,7 +10,7 @@ if len(sys.argv) >= 3:
     
     succ = transcode(inF, outF, options)
     if not succ:
-        sys.stderr.write("Something bad happened :(")
+        sys.stderr.write("Something bad happened :(\n")
         sys.stderr.write("Check encoder options\n")
 
 else:
