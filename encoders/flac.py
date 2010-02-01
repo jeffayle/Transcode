@@ -7,12 +7,22 @@ HANDLES=['flac','fla']
 DEFTYPE='flac'
 
 def encode(inF, outF, options, metadata):
+    #Get all the options to give to flac
     cli_options = getCliOptions(inF, outF, options, metadata)
+    #Do the actual encoding
+    st = subprocess.call(['flac'] + cli_options)
+
+    if st == 0:
+        return True
+    else:
+        return False
     
 def getCliOptions(inF, outF, options, metadata):
     "Builds up a list of the command line options to pass to flac"
     cli_options = [ ]
     cli_options.append("--output-name=%s"%outF) #Output file
+    cli_options.append("--totally-silent") #No output
+    cli_options.append("--force") #Overwrite existing files
     #Metadata
     if 'Title' in metadata:
         cli_options.append("--tag=title=%s"%metadata['Title'])
