@@ -7,8 +7,9 @@ import sys
 import imp
 
 #Decoders
-files = glob("decoders/*.py")
-files.remove("decoders/__init__.py")
+decDir =  os.path.join(sys.path[0], "decoders")
+files = glob(decDir + "/*.py")
+files.remove(decDir + "/__init__.py")
 modules = map(lambda m: imp.load_source(
         os.path.basename(os.path.splitext(m)[0]), m), files)
 
