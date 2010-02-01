@@ -20,7 +20,8 @@ def getCliOptions(inF, outF, options, metadata):
     "Builds up a list of the command line options to pass to flac"
     cli_options = [ ]
     cli_options.append("--output-name=%s"%outF) #Output file
-    cli_options.append("--totally-silent") #No output
+    if config.quiet:
+        cli_options.append("--totally-silent") #No output
     cli_options.append("--force") #Overwrite existing files
     #Metadata
     if 'Title' in metadata:

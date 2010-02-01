@@ -3,6 +3,8 @@
 import os
 import subprocess
 
+quiet = False
+
 def cmdName(cmd):
     "Returns the name of the command of a module"
     return cmd.CMD

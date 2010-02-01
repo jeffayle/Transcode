@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 """Handles encoding mp3 files"""
 import subprocess
+import config
 
 HANDLES=["mp3"]
 
@@ -18,7 +19,8 @@ def encode(inF, outF, options, metadata):
 def getCliOptions(inF, outF, options, meta):
     "Builds up a list of command line options to pass to lame"
     cli_options = [ ]
-    cli_options.append("--silent") #no output
+    if config.quiet:
+        cli_options.append("--silent") #no output
     cli_options.append("--add-id3v2") #Make sure v2 tags are written
     #Metadata
     if 'Title' in meta:
