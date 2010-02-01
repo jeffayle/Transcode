@@ -1,0 +1,39 @@
+Modules here should provide:
+- HANDLES (list of strings)
+- encode(input file, output file, options, metadata)
+
+## HANDLES
+Is a list of lower case file extensios that this format provides an encoder for.
+This is the same as `decoder.HANDLES`.
+
+For example `HANDLES=['flac','fla']`
+
+## Encode(input file, output file, options, metadata)
+This function takes four arguments,
+
+- Input file (file name)
+- Output file (file name)
+- Options
+- Metadata
+
+Input and output files are the filenames that the encoder will read from and
+write to respectively. Unlike with decoders, the output file passed in is where
+the encoder should encode to, if it does not it is expected to move or copy the
+file there afterwards.
+
+`Options` is a list of options passed in by the user. You may pass these options
+directly to the encoder.
+
+`Metadata` is a dictioary of metadata to add to the file. You may use as much
+of this as you like, but should include at least
+
+- Title
+- Artist
+- Album
+- Genre
+- Track Number
+- Tracktotal
+- Date
+
+This function should return true if encoding was successful, and false if it was
+not.
