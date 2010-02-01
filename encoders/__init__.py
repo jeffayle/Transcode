@@ -6,9 +6,9 @@ from glob import glob
 import sys
 import imp
 
-#Decoders
-files = glob("decoders/*.py")
-files.remove("decoders/__init__.py")
+#Encoders
+files = glob("encoders/*.py")
+files.remove("encoders/__init__.py")
 modules = map(lambda m: imp.load_source(
         os.path.basename(os.path.splitext(m)[0]), m), files)
 
