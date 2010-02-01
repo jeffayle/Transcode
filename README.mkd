@@ -1,0 +1,29 @@
+# Transcode - ImageMagick inspired audio transcoding #
+When you need to convert images between formats, it's as easy as
+
+    convert input.png output.jpg
+
+Thanks to image magic. Unfortunately, it is much more difficult to do the same
+with audio.
+
+    flac -c -d input.flac | lame -V 0 - output.mp3
+
+Will do the same thing for audio (where png is now flac, and jpeg is now mp3).
+This will not take care of metadata (artist, title, album, et cetera), and uses
+different switches for each codec, which you would have to look up each time, or
+try to memorize. It's evident that this is not a usable solution.
+
+*Transcode* is a simple cli application written in python designed to easily
+transcode between audio codecs. The above example becomes as simple as
+
+    transcode input.flac -V 0 output.mp3
+
+That's it, you even keep your metadata!
+
+## Usage ##
+
+    transcode <input file> [options] <output file>
+
+The output format is determined by its extension. `Options` affect how the file
+is encoded, for example, with mp3 you can add `-V 0` to encode with the highest
+VBR settings.
