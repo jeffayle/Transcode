@@ -7,6 +7,10 @@ HANDLES=['flac','fla']
 DEFTYPE='flac'
 
 def encode(inF, outF, options, metadata):
+    cli_options = getCliOptions(inF, outF, options, metadata)
+    
+def getCliOptions(inF, outF, options, metadata):
+    "Builds up a list of the command line options to pass to flac"
     cli_options = [ ]
     cli_options.append("--output-name=%s"%outF) #Output file
     #Metadata
@@ -24,5 +28,7 @@ def encode(inF, outF, options, metadata):
         cli_options.append("--tag=date=%s"%metadata['Date'])
     #Add user's options
     cli_options += options
+    #Add input file
+    cli_options.append(inF)
 
     return cli_options
