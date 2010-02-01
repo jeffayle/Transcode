@@ -4,7 +4,6 @@ import subprocess
 import config
 
 HANDLES=['flac','fla']
-DEFTYPE='flac'
 
 def encode(inF, outF, options, metadata):
     #Get all the options to give to flac
