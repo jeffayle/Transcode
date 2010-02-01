@@ -8,6 +8,7 @@ HANDLES=['flac','fla']
 def decode(inF, outF):
     st = subprocess.call(["flac",
             "--totally-silent", #No output
+            "-d" #Decode
             "--force", #Overwrite files
             "-o", outF, #Output
             inF #input
