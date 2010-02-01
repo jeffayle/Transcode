@@ -1,3 +1,6 @@
 *.swp
 *.pyc
 *.flac
+*.wav
+*.mp3
+*.wv
