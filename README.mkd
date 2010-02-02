@@ -27,3 +27,13 @@ That's it, you even keep your metadata!
 The output format is determined by its extension. `Options` affect how the file
 is encoded, for example, with mp3 you can add `-V 0` to encode with the highest
 VBR settings.
+
+## Supported Codecs ##
+### For Encoding ###
+- flac
+- mp3
+- wavpack
+### For Decoding ###
+- flac
+- wave
+- wavpack
