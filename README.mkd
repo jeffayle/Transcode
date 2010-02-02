@@ -40,12 +40,14 @@ name as the input, with the new extension. For example, `transcode something.wv
 - (Flac)[http://flac.sourceforge.net/]
 - (Lame)[http://lame.sourceforge.net/] (mp3)
 - (WavPack)[http://www.wavpack.com/]
+- (Vorbis Tools)[http://www.vorbis.com/]
 
 ## Supported Codecs ##
 ### For Encoding ###
 - flac
 - mp3
 - wavpack
+- Ogg Vorbis
 ### For Decoding ###
 - flac
 - mp3
@@ -83,3 +85,9 @@ with lossless compression, it will encode losslessly.
 
 Create a correction file if lossy. The lossy `.wv` file can be used on its own,
 but will be lossless if accompanied by the `.wvc` file this switch creates.
+
+### Ogg Vorbis ###
+    -q (-1 through 10)
+
+Set the encoder quality. `-1` is lowest, `10` is highest, `3` is default.
+Fractional values can also be given.
