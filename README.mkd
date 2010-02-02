@@ -48,6 +48,7 @@ name as the input, with the new extension. For example, `transcode something.wv
 - wavpack
 ### For Decoding ###
 - flac
+- mp3
 - wave
 - wavpack
 
