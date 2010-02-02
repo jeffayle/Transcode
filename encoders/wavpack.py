@@ -44,6 +44,8 @@ def getCliOptions(inF, outF, options, meta):
     if 'Date' in meta:
         cli_options.append("-w")
         cli_options.append("Year=%s"%meta['Date'])
+    #User options
+    cli_options += options
     #Input and output file
     cli_options.append(inF)
     cli_options.append("-o")
