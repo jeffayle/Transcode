@@ -53,7 +53,7 @@ name as the input, with the new extension. For example, `transcode something.wv
 ### For Decoding ###
 - flac
 - mp3
-- wave
+- wave (No metadata support)
 - wavpack
 - Ogg Vorbis
 - Speex (No metadata support)
