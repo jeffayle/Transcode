@@ -28,6 +28,10 @@ The output format is determined by its extension. `Options` affect how the file
 is encoded, for example, with mp3 you can add `-V 0` to encode with the highest
 VBR settings.
 
+If output file is only an extension (ie. `.mp3`) it will be given the same file
+name as the input, with the new extension. For example, `transcode something.wv
+-V 0 .mp3` will make a V2 mp3 named `something.mp3`.
+
 ## Supported Codecs ##
 ### For Encoding ###
 - flac
