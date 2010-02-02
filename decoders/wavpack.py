@@ -6,8 +6,16 @@ import config
 HANDLES=['wv']
 
 def decode(inF, outF):
-    ##TODO
-    pass
+    options = [ 'wvunpack' ]
+    if config.quiet:
+        options.append("-q")
+    options += [ '-y', inF, '-o', outF ]
+    st = subprocess.call(options)
+
+    if st == 0:
+        return outF
+    else:
+        return False
 
 def getTag(file, tag):
     p = subprocess.Popen(['wvunpack', '-q', '-x', tag, file],
