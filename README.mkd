@@ -32,6 +32,15 @@ If output file is only an extension (ie. `.mp3`) it will be given the same file
 name as the input, with the new extension. For example, `transcode something.wv
 -V 0 .mp3` will make a V2 mp3 named `something.mp3`.
 
+## Dependencies ##
+### Required ###
+- [Python](http://python.org)
+- [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
+### Optional (for differenct codecs) ###
+- (Flac)[http://flac.sourceforge.net/]
+- (Lame)[http://lame.sourceforge.net/] (mp3)
+- (WavPack)[http://www.wavpack.com/]
+
 ## Supported Codecs ##
 ### For Encoding ###
 - flac
