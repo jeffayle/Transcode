@@ -7,12 +7,13 @@ import sys
 import imp
 
 #Encoders
-encDir = os.path.join(sys.path[0], "encoders")
-files = glob(encDir + "/*.py")
-files.remove(encDir + "/__init__.py")
-modules = map(lambda m: imp.load_source(
-        os.path.basename(os.path.splitext(m)[0]), m), files)
+import flac
+import mp3
+import oggVorbis
+import speex
+import wavpack
 
+modules = [flac, mp3, oggVorbis, speex, wavpack]
 handlers = { }
 for m in modules:
     for type in m.HANDLES:
