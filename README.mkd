@@ -50,3 +50,35 @@ name as the input, with the new extension. For example, `transcode something.wv
 - flac
 - wave
 - wavpack
+
+## Quick Command Line Option Reference ##
+Unless otherwise noted, command line options are sent directly to the encoder,
+so any options for that encoder should work.
+
+Here is a quick reference of commonly used options for each supported encoder.
+
+### Flac ###
+    -0 through -8
+
+Compression level. `-0` sets no compression, `-8` sets highest compression.
+
+### MP3 ###
+    -V (0  through 9)
+
+Use VBR compression. `-V 0` is the highest quality, `-V 9` is the lowest.
+
+    -b n
+
+Use CBR encoding. `n` is the bitrate in kb/s to use, and can be 32, 40, 48,
+56, 64, 80, 96, 112, 128, 160, 192, 224, 256 or 320
+
+### WavPack ###
+    -bn
+
+Use lossy compression. `n` is the bitrate to target. If this can be achieved
+with lossless compression, it will encode losslessly.
+
+    -c
+
+Create a correction file if lossy. The lossy `.wv` file can be used on its own,
+but will be lossless if accompanied by the `.wvc` file this switch creates.
