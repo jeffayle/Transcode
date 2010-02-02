@@ -5,10 +5,6 @@ import subprocess
 
 quiet = False
 
-def cmdName(cmd):
-    "Returns the name of the command of a module"
-    return cmd.CMD
-
 #Thanks to Mark Byers
 #http://stackoverflow.com/questions/1993840/map-list-onto-dictionary/1993853
 def mapDict(keyFunction, values):
