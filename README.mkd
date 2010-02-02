@@ -3,7 +3,7 @@ When you need to convert images between formats, it's as easy as
 
     convert input.png output.jpg
 
-Thanks to image magic. Unfortunately, it is much more difficult to do the same
+Thanks to ImageMagick. Unfortunately, it is much more difficult to do the same
 with audio.
 
     flac -c -d input.flac | lame -V 0 - output.mp3
