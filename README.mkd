@@ -41,6 +41,7 @@ name as the input, with the new extension. For example, `transcode something.wv
 - (Lame)[http://lame.sourceforge.net/] (mp3)
 - (WavPack)[http://www.wavpack.com/]
 - (Vorbis Tools)[http://www.vorbis.com/]
+- (Speex)[http://www.speex.org/]
 
 ## Supported Codecs ##
 ### For Encoding ###
@@ -48,6 +49,7 @@ name as the input, with the new extension. For example, `transcode something.wv
 - mp3
 - wavpack
 - Ogg Vorbis
+- Speex
 ### For Decoding ###
 - flac
 - mp3
@@ -92,3 +94,12 @@ but will be lossless if accompanied by the `.wvc` file this switch creates.
 
 Set the encoder quality. `-1` is lowest, `10` is highest, `3` is default.
 Fractional values can also be given.
+
+### Speex ###
+    -n, -w, -u
+
+Narrowband (8kHz), wideband (16kHz) and ultra wideband (32kHz) respectively.
+
+    --quality (0 through 10)
+
+Set the encoding quality. `0` is lowest, `10` is highest, `3` is default.
