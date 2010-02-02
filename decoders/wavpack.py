@@ -16,7 +16,7 @@ def getTag(file, tag):
     output = p.communicate()[0]
     return output or None
 
-def getMetaData(file):
+def getMetadata(file):
     meta = { }
     meta['Title'] = getTag(file, "Title")
     meta['Artist'] = getTag(file, "Artist")
