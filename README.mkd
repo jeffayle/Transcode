@@ -56,6 +56,7 @@ name as the input, with the new extension. For example, `transcode something.wv
 - wave
 - wavpack
 - Ogg Vorbis
+- Speex (No metadata support)
 
 ## Quick Command Line Option Reference ##
 Unless otherwise noted, command line options are sent directly to the encoder,
