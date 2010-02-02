@@ -12,7 +12,7 @@ def transcode(inF, outF, options, type=None):
     #Get the file's metadata
     meta = decoders.getMetadata(inF)
     #Decode the file
-    f = tempfile.NamedTemporaryFile()
+    f = tempfile.NamedTemporaryFile(suffix=".wav")
     inF_real = decoders.decode(inF, f.name)
     if not inF_real:
         return False
