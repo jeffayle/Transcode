@@ -41,11 +41,11 @@ setup.py install`, and everything will just work.
 - [Python](http://python.org)
 - [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
 ### Optional (for differenct codecs) ###
-- (Flac)[http://flac.sourceforge.net/]
-- (Lame)[http://lame.sourceforge.net/] (mp3)
-- (WavPack)[http://www.wavpack.com/]
-- (Vorbis Tools)[http://www.vorbis.com/]
-- (Speex)[http://www.speex.org/]
+- [Flac](http://flac.sourceforge.net/)
+- [Lame](http://lame.sourceforge.net/) (mp3)
+- [WavPack](http://www.wavpack.com/)
+- [Vorbis Tools](http://www.vorbis.com/)
+- [Speex](http://www.speex.org/)
 
 ## Supported Codecs ##
 ### For Encoding ###
