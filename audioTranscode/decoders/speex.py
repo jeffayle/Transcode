@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """Handles decoding speex files"""
-import config
+from .. import config
 import subprocess
 
 HANDLES=['spx']

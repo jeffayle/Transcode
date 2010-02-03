@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Handles decoding ogg vorbis files"""
 import subprocess
-import config
+from .. import config
 
 HANDLES=['ogg']
 

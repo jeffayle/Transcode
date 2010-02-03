@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Handles decoding wavpack files"""
 import subprocess
-import config
+from .. import config
 
 HANDLES=['wv']
 

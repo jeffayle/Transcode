@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """Handles decoders"""
-import config
+from .. import config
 import os
 from glob import glob
 import sys

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Handles encoding mp3 files"""
 import subprocess
-import config
+from .. import config
 
 HANDLES=["mp3"]
 

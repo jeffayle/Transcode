@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Handles encoding ogg speex files"""
 import subprocess
-import config
+from .. import config
 
 HANDLES=['spx']
 

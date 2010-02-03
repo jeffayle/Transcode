@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Handles decoding flac files"""
 import subprocess
-import config
+from .. import config
 
 HANDLES=['flac','fla']
 
