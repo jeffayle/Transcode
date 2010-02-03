@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name = 'AudioTranscode',
     version = '1.0',
-    packages = ['audioTranscode'],
+    packages = ['audioTranscode','audioTranscode.encoders','audioTranscode.decoders'],
     scripts = ['transcode'],
     author = 'Jeffrey Aylesworth',
     author_email = 'jeffrey@aylesworth.ca',
