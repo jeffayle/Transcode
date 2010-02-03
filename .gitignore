@@ -6,3 +6,4 @@
 *.wv
 *.ogg
 *.spx
+build/*
