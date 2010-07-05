@@ -41,7 +41,7 @@ def getCliOptions(inF, outF, options, meta):
     elif 'Track Number' in meta:
         cli_options.append("--tn")
         cli_options.append(meta['Track Number'])
-    elif 'Date' in meta:
+    if 'Date' in meta:
         cli_options.append("--ty")
         cli_options.append(meta['Date'])
     #User options
