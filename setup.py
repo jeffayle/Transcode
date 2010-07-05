@@ -3,7 +3,7 @@ from distutils.core import setup
 
 setup(
     name = 'AudioTranscode',
-    version = '1.0',
+    version = '1.1',
     packages = ['audioTranscode','audioTranscode.encoders','audioTranscode.decoders'],
     scripts = ['transcode'],
     author = 'Jeffrey Aylesworth',
