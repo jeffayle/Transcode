@@ -15,6 +15,8 @@
 import config
 import sys
 import os
+import shlex
+from glob import glob
 from doTranscode import transcode, mtranscode
 
 if 'QUIET_TRANSCODE' in os.environ and os.environ['QUIET_TRANSCODE']!='0':
@@ -45,16 +47,40 @@ def main():
 def main_multi():
     "Multiple mode for `transcodeall` command"
     if len(sys.argv) >= 2:
-        config.quiet = true
+        config.quiet = True
         files = sys.argv[1:]
         jobs = [ ]
+        copy = [ ]
         print "Welcome to transcodeall!"
         print "Add transcoding jobs in this format:"
         print "do <format> <directory> <encoder options>"
         print "do mp3 MP3-320 -b 320"
         print ""
+        print "To copy files to each directory:"
+        print "cp <files>"
+        print "cp *.jpg CD.cue"
+        print ""
         print "Directory will be created if it does not exist"
         print "Blank line will end input, start transcoding"
+        while True:
+            line = shlex.split(raw_input('> '))
+            if line == []:
+                break
+            elif line[0] == 'do':
+                if len(line) >= 3:
+                    jobs.append(line[1:])
+                else:
+                    print "Not enough arguments for `do`"
+            elif line[0] == 'cp':
+                total = 0
+                for f in line[1:]:
+                    new = glob(f)
+                    total += len(new)
+                    copy += new
+                print "Adding %d files to copy."%total
+            else:
+                print "Unknown command `%s`"%line[0]
+        mtranscode(sys.argv[1:], jobs, copy)
     else:
         print "Transcode: ImageMagick inspired audio transcoding"
         print "---"

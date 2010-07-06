@@ -23,6 +23,7 @@ def transcode(inF, outF, options, type=None):
     f.close()
     return succ
 
-def mtranscode(files, jobs):
+def mtranscode(files, jobs, copy):
     "Multiple file transcoding processor"
-    pass
+    print "starting %d jobs on %d files, copying %d"%(len(files), len(jobs),
+            len(copy))
