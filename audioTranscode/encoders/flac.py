@@ -34,6 +34,8 @@ def getCliOptions(inF, outF, options, metadata):
         cli_options.append("--tag=genre=%s"%metadata['Genre'])
     if 'Track Number' in metadata:
         cli_options.append("--tag=tracknumber=%s"%metadata['Track Number'])
+    if 'Tracktotal' in metadata:
+        cli_options.append("--tag=tracktotal=%s"%metadata['Tracktotal'])
     if 'Date' in metadata:
         cli_options.append("--tag=date=%s"%metadata['Date'])
     #Add user's options
