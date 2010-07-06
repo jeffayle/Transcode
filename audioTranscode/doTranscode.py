@@ -22,3 +22,7 @@ def transcode(inF, outF, options, type=None):
     #Clean up
     f.close()
     return succ
+
+def mtranscode(files, jobs):
+    "Multiple file transcoding processor"
+    pass
