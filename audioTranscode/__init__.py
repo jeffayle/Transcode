@@ -15,7 +15,7 @@
 import config
 import sys
 import os
-from doTranscode import transcode
+from doTranscode import transcode, mtranscode
 
 if 'QUIET_TRANSCODE' in os.environ and os.environ['QUIET_TRANSCODE']!='0':
     config.quiet = True
@@ -45,7 +45,16 @@ def main():
 def main_multi():
     "Multiple mode for `transcodeall` command"
     if len(sys.argv) >= 2:
+        config.quiet = true
         files = sys.argv[1:]
+        jobs = [ ]
+        print "Welcome to transcodeall!"
+        print "Add transcoding jobs in this format:"
+        print "do <format> <directory> <encoder options>"
+        print "do mp3 MP3-320 -b 320"
+        print ""
+        print "Directory will be created if it does not exist"
+        print "Blank line will end input, start transcoding"
     else:
         print "Transcode: ImageMagick inspired audio transcoding"
         print "---"
