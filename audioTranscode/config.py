@@ -20,4 +20,14 @@ def readExiftoolMetadata(file):
     #Split on linebreaks, then on spaces, stripping extra whitespace
     data = map(lambda ln: map(str.strip, ln.split(":",1)), output.split("\n"))
     data.remove(['']) #Remove blank list
-    return dict(data)
+    data = dict(data)
+
+    #MP3 track shows up as 'Track' and not 'Track Number'
+    if data.has_key('Track'):
+        data['Track Number'] = data['Track']
+    #Split track number if it has a slash in it
+    if (data.has_key('Track Number'))and('/' in data['Track Number']):
+        data['Track Number'],data['Tracktotal'] = \
+                data['Track Number'].split('/')
+
+    return data
