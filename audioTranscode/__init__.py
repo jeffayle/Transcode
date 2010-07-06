@@ -41,3 +41,13 @@ def main():
         print "---"
         print "Usage:"
         print "%s <input> [options] <output>"%(sys.argv[0])
+
+def main_multi():
+    "Multiple mode for `transcodeall` command"
+    if len(sys.argv) >= 2:
+        files = sys.argv[1:]
+    else:
+        print "Transcode: ImageMagick inspired audio transcoding"
+        print "---"
+        print "Usage: (interactive)"
+        print "%s <files>"%(sys.argv[0])
