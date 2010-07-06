@@ -40,6 +40,7 @@ setup.py install`, and everything will just work.
 ### Required ###
 - [Python](http://python.org)
 - [Exiftool](http://www.sno.phy.queensu.ca/~phil/exiftool/)
+
 ### Optional (for differenct codecs) ###
 - [Flac](http://flac.sourceforge.net/)
 - [Lame](http://lame.sourceforge.net/) (mp3)
@@ -54,6 +55,7 @@ setup.py install`, and everything will just work.
 - wavpack
 - Ogg Vorbis
 - Speex
+
 ### For Decoding ###
 - flac
 - mp3
