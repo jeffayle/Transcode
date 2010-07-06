@@ -4,6 +4,8 @@ import decoders
 import config
 import tempfile
 import os
+import errno
+import shutil
 
 def transcode(inF, outF, options, type=None):
     "Transcodes a file"
@@ -25,5 +27,17 @@ def transcode(inF, outF, options, type=None):
 
 def mtranscode(files, jobs, copy):
     "Multiple file transcoding processor"
-    print "starting %d jobs on %d files, copying %d"%(len(files), len(jobs),
-            len(copy))
+    print "- Creating directories for transcoding"
+    #Create all the directories
+    for job in jobs:
+        try:
+            os.makedirs(job[1])
+        except OSError as exc:
+            if exc.errno == errno.EEXIST:
+                pass
+            else: raise
+    #Copy static files
+    print "- Copying static files"
+    for f in copy:
+        for job in jobs:
+            shutil.copy(f, job[1])
