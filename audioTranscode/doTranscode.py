@@ -41,3 +41,24 @@ def mtranscode(files, jobs, copy):
     for f in copy:
         for job in jobs:
             shutil.copy(f, job[1])
+    #Do the transcoding
+    print "- Starting decoding"
+    for f in files:
+        print "- Decoding %s"%f
+        wav = tempfile.NamedTemporaryFile(suffix=".wav")
+        wav = decoders.decode(f, wav.name)
+        meta = decoders.getMetadata(f)
+        if not wav:
+            print " `- Decoding failed"
+            continue
+        else:
+            print " `- Decoded"
+        #Encode
+        for job in jobs:
+            type = job[0]
+            dir = job[1]
+            opts = job[2:]
+            print " `- Encoding (%s %s)"%(type, " ".join(opts))
+            #fname = os.path.join(dir,
+            #        os.path.splitext(os.path.split(f))[1]+'.'+type)
+            #print fname
