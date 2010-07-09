@@ -47,7 +47,6 @@ def main():
 def main_multi():
     "Multiple mode for `transcodeall` command"
     if len(sys.argv) >= 2:
-        config.quiet = True
         files = sys.argv[1:]
         jobs = [ ]
         copy = [ ]
