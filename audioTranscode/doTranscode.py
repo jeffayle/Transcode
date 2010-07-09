@@ -46,9 +46,9 @@ def mtranscode(files, jobs, copy):
     for f in files:
         print "- Decoding %s"%f
         wav = tempfile.NamedTemporaryFile(suffix=".wav")
-        wav = decoders.decode(f, wav.name)
+        wavName = decoders.decode(f, wav.name)
         meta = decoders.getMetadata(f)
-        if not wav:
+        if not wavName:
             print " `- Decoding failed"
             continue
         else:
@@ -59,6 +59,10 @@ def mtranscode(files, jobs, copy):
             dir = job[1]
             opts = job[2:]
             print " `- Encoding (%s %s)"%(type, " ".join(opts))
-            #fname = os.path.join(dir,
-            #        os.path.splitext(os.path.split(f))[1]+'.'+type)
-            #print fname
+            outf= os.path.join(dir,
+                (os.path.splitext(os.path.split(f)[1])[0] + '.' + type))
+            stat = encoders.encode(wavName, outf, type, opts, meta)
+            if stat:
+                print "  `- Encoding successful"
+            else:
+                print "  `- Encoding failed"
