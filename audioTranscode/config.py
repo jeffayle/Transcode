@@ -25,6 +25,9 @@ def readExiftoolMetadata(file):
     #MP3 track shows up as 'Track' and not 'Track Number'
     if data.has_key('Track'):
         data['Track Number'] = data['Track']
+    #Flac is showing 'Tracknumber' for 'Track Number'
+    if data.has_key('Tracknumber'):
+        data['Track Number'] = data['Tracknumber']
     #Split track number if it has a slash in it
     if (data.has_key('Track Number'))and('/' in data['Track Number']):
         data['Track Number'],data['Tracktotal'] = \
