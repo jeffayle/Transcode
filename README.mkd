@@ -30,7 +30,7 @@ VBR settings.
 
 If output file is only an extension (ie. `.mp3`) it will be given the same file
 name as the input, with the new extension. For example, `transcode something.wv
--V 0 .mp3` will make a V2 mp3 named `something.mp3`.
+-V 2 .mp3` will make a V2 mp3 named `something.mp3`.
 
 ## Installation ##
 Installation is taken care of by `distutils`, to install just run `python
