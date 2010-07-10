@@ -13,8 +13,9 @@ import oggVorbis
 import speex
 import wave
 import wavpack
+import aac
 
-modules = [flac, mp3, oggVorbis, speex, wave, wavpack]
+modules = [flac, mp3, oggVorbis, speex, wave, wavpack, aac]
 handlers = { }
 for m in modules:
     for type in m.HANDLES:
