@@ -47,6 +47,7 @@ setup.py install`, and everything will just work.
 - [WavPack](http://www.wavpack.com/)
 - [Vorbis Tools](http://www.vorbis.com/)
 - [Speex](http://www.speex.org/)
+- [FAAD2](http://www.audiocoding.com/faad2.html)
 
 ## Supported Codecs ##
 ### For Encoding ###
@@ -63,6 +64,7 @@ setup.py install`, and everything will just work.
 - wavpack
 - Ogg Vorbis
 - Speex (No metadata support)
+- AAC
 
 ## Quick Command Line Option Reference ##
 Unless otherwise noted, command line options are sent directly to the encoder,
