@@ -36,5 +36,8 @@ def readExiftoolMetadata(file):
     if (data.has_key('Track Number'))and(' of ' in data['Track Number']):
         data['Track Number'],data['Tracktotal'] = \
                 data['Track Number'].split(' of ')
+    #Year needs to be Date
+    if data.has_key('Year'):
+        data['Date'] = data['Year']
 
     return data
