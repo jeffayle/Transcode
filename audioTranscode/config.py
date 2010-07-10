@@ -32,5 +32,9 @@ def readExiftoolMetadata(file):
     if (data.has_key('Track Number'))and('/' in data['Track Number']):
         data['Track Number'],data['Tracktotal'] = \
                 data['Track Number'].split('/')
+    #Same for for 'of'
+    if (data.has_key('Track Number'))and(' of ' in data['Track Number']):
+        data['Track Number'],data['Tracktotal'] = \
+                data['Track Number'].split(' of ')
 
     return data
