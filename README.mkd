@@ -32,6 +32,28 @@ If output file is only an extension (ie. `.mp3`) it will be given the same file
 name as the input, with the new extension. For example, `transcode something.wv
 -V 2 .mp3` will make a V2 mp3 named `something.mp3`.
 
+### Transcodeall ###
+The package also includes the command `transcodeall`, which can be used to 
+transcode multiple files, and into multiple formats at the same time.
+
+The program is started with `transcodeall <files>`. An interactive prompt will
+show up, there are two commands you can use. A blank line will end the prompt,
+and start transcoding.
+
+#### cp ####
+Cp takes a list of files (can use shell globs), and adds those files to each
+directory it is transocoding to
+
+    cp album.log *.jpg
+
+#### do ####
+Do adds a transcoding job, it takes at least two options, the type of file, and
+the directory, with an optional list of encoding options.
+
+    do mp3 Album-V0 -V 0
+    do ogg Album-q8 -q8
+    do mp3 Album-320 -b 320
+
 ## Installation ##
 Installation is taken care of by `distutils`, to install just run `python
 setup.py install`, and everything will just work.
